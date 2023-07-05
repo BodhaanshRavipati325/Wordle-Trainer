@@ -17,13 +17,7 @@ export default function Board({ randomWord }: BoardProps) {
   const word = randomWord;
   const [rows, setRows] = useState<CellData[][]>([[]]);
 
-  const [message, setMessage] = useState<string>("Random Word Selected");
-
-  fetch(`https://api.datamuse.com/words?sl=${word}`).then((response) => {
-      return response.json
-    }).then((data) => {
-      setMessage(Object.keys(data)[0]);
-    });
+  const [message, setMessage] = useState<string>("");
 
   useEffect(() => {
     const handleKeyUp = (e: KeyboardEvent) => {

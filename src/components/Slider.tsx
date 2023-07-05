@@ -4,6 +4,10 @@ import { useDrag } from '@use-gesture/react'
 
 import styles from '/Users/bodhaanshravipati/wordle-test/tutorial-react-wordle-completed/src/styles.module.css'
 
+interface SliderProps {
+  message?: string;
+}
+
 const left = {
   bg: `white`,
   justifySelf: 'end',
@@ -45,13 +49,12 @@ const Slider = ({ children }: { children: ReactNode }) => {
   )
 }
 
-export default function App() {
+export default function App({message}: SliderProps) {
   return (
     <div className={styles.container}>
       <Slider>
-        Slide.
+        {message}
       </Slider>
-      <h1 className={styles.hint}>e22e23e2e2</h1>
     </div>
   )
 }

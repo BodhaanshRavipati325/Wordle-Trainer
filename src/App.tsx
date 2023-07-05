@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div>
-      <Hints />
+      <Hints randomWord={word}/>
       <Board randomWord={word}/>
     </div>
   );
